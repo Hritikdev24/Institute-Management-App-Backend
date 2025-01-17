@@ -9,7 +9,7 @@ const{studentRouter}=require('./routes/studentRoute.js');
 const{fessRouter}=require("./routes/feesRoute.js")
 //consfiguring the dotenv file
 env.config();
-const port=9090;
+const port=9090; 
 
 
 
