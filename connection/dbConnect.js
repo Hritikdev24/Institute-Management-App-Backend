@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 require("dotenv").config(); // Load environment variables
 
 async function dbConnect() {
-  const mongoUri = "mongodb+srv://hritikGangadhar:YourPassword@cluster0.rgkrs.mongodb.net/myDatabase?retryWrites=true&w=majority"; 
+  const mongoUri = "mongodb+srv://hritikGangadhar:Hritik%4011@cluster0.rgkrs.mongodb.net/myDatabase?retryWrites=true&w=majority"; 
   if (!mongoUri) {
     console.error("Error: MONGO_URI is not defined in the environment variables.");
     process.exit(1); // Exit the process if MONGO_URI is missing
