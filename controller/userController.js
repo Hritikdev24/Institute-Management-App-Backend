@@ -1,6 +1,6 @@
 const { Mongoose } = require("mongoose");
 const { userModel } = require("../model/userModel.js");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 var jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
 const secrete_key = "Hritik@11";
