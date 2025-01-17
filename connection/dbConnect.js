@@ -1,12 +1,24 @@
 const mongoose = require("mongoose");
+require("dotenv").config(); // Load environment variables
 
 async function dbConnect() {
-  try {
-    await mongoose.connect("mongodb://localhost:27017/course");
+  const mongoUri = process.env.MONGO_URI; // Get the connection string from .env
 
-    console.log("database is connected");
+  if (!mongoUri) {
+    console.error("Error: MONGO_URI is not defined in the environment variables.");
+    process.exit(1); // Exit the process if MONGO_URI is missing
+  }
+
+  try {
+    await mongoose.connect(mongoUri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+
+    console.log("✅ Database is successfully connected!");
   } catch (err) {
-    console.log(err);
+    console.error("❌ Failed to connect to the database:", err);
+    process.exit(1); // Exit the process on connection failure
   }
 }
 
